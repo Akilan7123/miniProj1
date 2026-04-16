@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    <span class="icon">🔐</span>
+    <h1>Password Generator</h1>
+    <p>Create secure, random passwords instantly</p>
+  </div>
+
+  <!-- Output -->
+  <div class="output-wrap">
+    <span id="pw-display"><span class="placeholder">Your password will appear here</span></span>
+    <button id="copy-btn" title="Copy to clipboard">📋</button>
+  </div>
+
+  <!-- Strength Meter -->
+  <div class="strength-section">
+    <div class="strength-bars">
+      <div class="s-seg" id="s1"></div>
+      <div class="s-seg" id="s2"></div>
+      <div class="s-seg" id="s3"></div>
+      <div class="s-seg" id="s4"></div>
+    </div>
+    <div class="strength-label" id="strength-label"></div>
+  </div>
+
+  <!-- Length Slider -->
+  <div class="section">
+    <div class="section-label">Password Length</div>
+    <div class="slider-row">
+      <input type="range" id="length-slider" min="4" max="64" value="16" step="1">
+      <span class="slider-val" id="length-val">16</span>
+    </div>
+  </div>
+
+  <!-- Character Options -->
+  <div class="section">
+    <div class="section-label">Character Types</div>
+    <div class="options-grid">
+      <label class="opt-card active" id="lbl-upper">
+        <input type="checkbox" id="opt-upper" checked>
+        <div>
+          <div class="opt-label">Uppercase</div>
+          <div class="opt-eg">A B C … Z</div>
+        </div>
+      </label>
+      <label class="opt-card active" id="lbl-lower">
+        <input type="checkbox" id="opt-lower" checked>
+        <div>
+          <div class="opt-label">Lowercase</div>
+          <div class="opt-eg">a b c … z</div>
+        </div>
+      </label>
+      <label class="opt-card active" id="lbl-numbers">
+        <input type="checkbox" id="opt-numbers" checked>
+        <div>
+          <div class="opt-label">Numbers</div>
+          <div class="opt-eg">0 1 2 … 9</div>
+        </div>
+      </label>
+      <label class="opt-card" id="lbl-special">
+        <input type="checkbox" id="opt-special">
+        <div>
+          <div class="opt-label">Special</div>
+          <div class="opt-eg">! @ # $ %</div>
+        </div>
+      </label>
+    </div>
+  </div>
+
+  <!-- Error -->
+  <div class="error-msg" id="err-msg">⚠️ Please select at least one character type.</div>
+
+  <!-- Generate Button -->
+  <button id="gen-btn">🔑 Generate Password</button>
+
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
